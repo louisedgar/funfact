@@ -1,0 +1,42 @@
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left-top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
+#logo {
+  max-width: 200px;
+  margin: 40% auto 0;
+  position: relative;
+}
+
+#heading {
+  position: relative;
+  margin: 20% auto 0;
+  font-family: Montserrat Alternates;
+  font-size: 16;
+  font-weight: medium;
+}
+
+.btn {
+  background-color: #00b159;
+  position: absolute;
+  border: none;
+  font-family: Montserrat;
+  font-size: medium;
+  font-weight: bold;
+  bottom: 30px;
+  width: 90%;
+  padding: 10px;
+}
+
+.background {
+  background-image: url(./asset/background.png);
+  position: absolute;
+}
