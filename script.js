@@ -1,16 +1,9 @@
-// fetch("fakta-fakta.txt")
-//   .then(response => {
-//     return response.text();
-//   })
-//   .then(data => {
-//     let facts = "<div>Fakta<div>";
-//     data.filter(data => {
-//       let id = Math.round(Math.random() * 50);
-//       if (data === id) {
-//         facts += `<p>${data.id}<p>`;
-//       }
-//     });
-//     document.getElementById("json").innerHTML = facts;
-//   });
-
-// http://5e19bc3ccc623b00146789fc.mockapi.io/funfact/facts
+fetch("http://5e19bc3ccc623b00146789fc.mockapi.io/funfact/facts")
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    const output = id => data.filter(el => el.id === id);
+    console.log(output(3));
+  });

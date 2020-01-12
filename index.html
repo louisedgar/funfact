@@ -12,28 +12,93 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Fun Fact!</title>
   </head>
   <body>
-    <div class="background"></div>
-    <div class="container">
-      <div id="logo">
-        <img src="./asset/logo.svg" class="img-fluid" alt="Responsive img" />
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-6" id="logo">
+          <img src="./asset/logo.svg" class="img-fluid" alt="" />
+        </div>
       </div>
-      <div id="heading" class="text-center">
-        <p>Dosis fakta-fakta lucu<br />dan menarik harianmu.</p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6" id="heading">
+          <blockquote class="blockquote text-center">
+            <p class="mb-0">
+              Dosis fakta-fakta lucu<br />dan menarik harianmu.
+            </p>
+          </blockquote>
+        </div>
       </div>
-      <div class="text-center">
-        <button type="button" class="btn btn-primary btn-lg btn-block">
-          Beri saya dosis
-        </button>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="fixed-bottom" id="bottom">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg btn-block"
+                  data-toggle="modal"
+                  data-target="#exampleModalLong"
+                >
+                  Beri saya dosis
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalLong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="./asset/null.png"
+              class="img-fluid rounded-circle"
+              alt=""
+              id="mod-img"
+            />
+            <p id="fact">
+              Membenturkan kepala di tembok selama satu jam dapat membakar 150
+              kalori.
+            </p>
+            <p id="sub-fact">
+              Ga" percaya?.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
     <script
-      src="https://code.jquery.com/jquer
-    y-3.4.1.slim.min.js"
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
@@ -47,6 +112,5 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js"></script>
   </body>
 </html>
