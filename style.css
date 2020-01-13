@@ -71,3 +71,9 @@ body {
   font-size: 14px;
   color: #7d7d7d;
 }
+
+#closeLine {
+  margin-top: 10px;
+  margin-right: 10px;
+  color: #00b159;
+}

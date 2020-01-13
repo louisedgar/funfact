@@ -21,6 +21,15 @@
   </head>
   <body>
     <div class="container text-center">
+      <button
+        type="button"
+        class="close invisible"
+        aria-label="Close"
+        id="closeLine"
+        onclick="closeWindow()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div class="row justify-content-center">
         <div class="col-lg-6" id="logo">
           <img src="./asset/logo.svg" class="img-fluid" alt="" />
@@ -46,6 +55,7 @@
                   class="btn btn-primary btn-lg btn-block"
                   data-toggle="modal"
                   data-target="#exampleModalLong"
+                  onclick="getFact()"
                 >
                   Beri saya dosis
                 </button>
@@ -77,20 +87,8 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body text-center">
-            <img
-              src="./asset/null.png"
-              class="img-fluid rounded-circle"
-              alt=""
-              id="mod-img"
-            />
-            <p id="fact">
-              Membenturkan kepala di tembok selama satu jam dapat membakar 150
-              kalori.
-            </p>
-            <p id="sub-fact">
-              Ga" percaya?.
-            </p>
+          <div class="modal-body text-center" id="content">
+            <!-- Modal content from JSON -->
           </div>
         </div>
       </div>
@@ -112,5 +110,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="https://d.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="./liff.js"></script>
   </body>
 </html>
