@@ -21,15 +21,6 @@
   </head>
   <body>
     <div class="container text-center">
-      <button
-        type="button"
-        class="close invisible"
-        aria-label="Close"
-        id="closeLine"
-        onclick="closeWindow()"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
       <div class="row justify-content-center">
         <div class="col-lg-6" id="logo">
           <img src="./asset/logo.svg" class="img-fluid" alt="" />
@@ -39,9 +30,9 @@
       <div class="row justify-content-center">
         <div class="col-lg-6" id="heading">
           <blockquote class="blockquote text-center">
-            <p class="mb-0">
+            <span class="mb-0">
               Dosis fakta-fakta lucu<br />dan menarik harianmu.
-            </p>
+            </span>
           </blockquote>
         </div>
       </div>
@@ -53,9 +44,17 @@
                 <button
                   type="button"
                   class="btn btn-primary btn-lg btn-block"
+                  id="openExternal"
+                >
+                  Open in Browser
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg btn-block"
                   data-toggle="modal"
                   data-target="#exampleModalLong"
-                  onclick="getFact()"
+                  onclick="getFact();"
+                  id="factButton"
                 >
                   Beri saya dosis
                 </button>
@@ -94,7 +93,6 @@
       </div>
     </div>
 
-    <script src="./script.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -110,7 +108,8 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="https://d.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script src="./liff.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

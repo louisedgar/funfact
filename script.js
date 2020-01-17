@@ -1,5 +1,5 @@
 function getFact() {
-  fetch("http://5e19bc3ccc623b00146789fc.mockapi.io/funfact/facts")
+  fetch("https://5e19bc3ccc623b00146789fc.mockapi.io/funfact/facts")
     .then(response => {
       return response.json();
     })

@@ -1,57 +1,51 @@
-window.onload = function() {
-  const useNodeJS = false;
-  const defaultLiffId = "1653761116-WZxeVvO7";
-  let myLiffId = "";
-
-  if (useNodeJS) {
-    fetch("/send-id")
-      .then(function(reqResponse) {
-        return reqResponse.json();
-      })
-      .then(function(jsonResponse) {
-        myLiffId = jsonResponse.id;
-        initializeLiffNode(myLiffId);
-      })
-      .catch(function(error) {
-        console.log(
-          "Unable to receive the LIFF ID as an environment variable.",
-          error
-        );
-      });
-  } else {
-    myLiffId = defaultLiffId;
-    initializeLiffNode(myLiffId);
-  }
-};
-
-function initializeLiffNode(myLiffId) {
-  if (!myLiffId) {
-    console.log("LiffId is needed for LINE browser");
-  } else {
-    initializeLiff(myLiffId);
-  }
-}
-
-function initializeLiff(myLiffId) {
+window.onload = () => {
   liff
     .init({
-      liffId: myLiffId
+      liffId: "1653761116-WZxeVvO7" // use own liffId
     })
     .then(() => {
       initializeApp();
+      // Start to use liff's api
     })
     .catch(err => {
-      console.log("Something went wrong with LIFF initialization.", err);
+      // Error happens during initialization
+      console.log(err.code, err.message);
     });
-}
+};
 
 function initializeApp() {
-  if (liff.isInClient()) {
-    alert("Yuk cari tau fakta-fakta menarik disini.");
-    document.getElementById("closeLine").classList.remove("invisible");
+  if (!liff.isInClient()) {
+    document.getElementById("openExternal").remove();
+  } else {
+    openExternal();
+    sendMessage();
   }
 }
 
-function closeWindow() {
-  liff.closeWindow();
+function openExternal() {
+  document.getElementById("openExternal").addEventListener("click", () => {
+    liff.openWindow({
+      url: "https://funfactid.herokuapp.com/",
+      external: true
+    });
+  });
+}
+
+function sendMessage() {
+  document.getElementById("factButton").addEventListener("click", () => {
+    liff
+      .sendMessages([
+        {
+          type: "text",
+          text:
+            "Dosis fakta-fakta lucu dan menarik buatmu hari ini. Keep calm and stay curious."
+        }
+      ])
+      .then(function() {
+        console.log("Message sent");
+      })
+      .catch(function(error) {
+        console.log("Error sending message: " + error);
+      });
+  });
 }
